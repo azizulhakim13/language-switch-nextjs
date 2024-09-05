@@ -1,0 +1,331 @@
+@import "./_var.scss";
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Global
+:root {
+  --white: #fff;
+  --dark: #000;
+  --dark2: #393939;
+  --dark3: #2F2F2F;
+  --dark4: #6B6B6B;
+  --dark5: #545454;
+  --orange: #FFBC57;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+
+
+// Menu
+.nav-logo-mobile {
+  max-width: 200px;
+}
+
+.nav-logo {
+  max-width: 280px;
+}
+
+.nav-bar.fixed-top {
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-links {
+  color: var(--dark2);
+  font-size: 18px;
+  transition: all .25s ease;
+
+  &:hover {
+      color: $primary;
+  }
+}
+
+/* Menu icon transition */
+.menu-icon {
+  display: block;
+  cursor: pointer;
+}
+
+.bar {
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+  margin: 6px 0;
+  transition: transform 0.3s ease;
+}
+
+.menu-open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.menu-open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+
+
+// Hero
+.hero-section {
+  background-image: url('/img/hero-bg.png');
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: bottom;
+  background-size: contain;
+}
+
+// Hero
+.hero {
+  .hero-right {
+      position: relative;
+  
+      .shape-1 {
+          position: absolute;
+          top: -36px;
+          right: 0;
+          animation: slide-horizontal 3s infinite alternate ease-in-out;
+      }
+
+
+      .shape-2 {
+          position: absolute;
+          top: -50%;
+          right: 0;
+      }
+  }
+}
+
+// services section
+.services {
+  background-image: url('/img/services/service-bg.png');
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  // background-position: bottom;
+
+
+  .service-column {
+    box-shadow: 0 1rem 3rem rgba($dark, .175);
+    background-color: $white !important;
+    background: linear-gradient($primary 0 0) no-repeat;
+    background-size: 100% 0%;
+    background-position: 0% 100%;
+    transition: all ease .5s;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: center;
+
+    &:hover {
+      background-size: 100% 100%;
+      transition: all ease .5s;
+
+      h3, p {
+        color: var(--#{$prefix}white);
+      }
+    }
+  }
+}
+
+
+@keyframes slide-horizontal {
+  0%, 100% {
+      transform: translateX(-10px); 
+  }
+  50% {
+      transform: translateX(10px);   
+  }
+}
+// Hero
+
+// how-create
+.how-create, .download-app, .about-footer {
+  background-color: #f7f7f7;
+}
+
+
+// pricing
+.pricing {
+
+  .nav-item {
+      padding: 8px;
+  }
+
+  .nav-pills .nav-link {
+      border: 1px solid $primary;
+      padding: 12px 28px;
+      border-radius: 20px;
+      font-weight: 700;
+      box-shadow: 0 1rem 3rem rgba($black, .175);
+  }
+
+  .pricing-card {
+      border: 1px solid $primary;
+      border-radius: 20px;
+      box-shadow: 0 1rem 3rem rgba($black, .175);
+      background-color: var(--white);
+      background: linear-gradient($primary 0 0) no-repeat;
+      background-size: 100% 0%;
+      background-position: 0% 100%;
+      transition: all ease .5s;
+
+      &:hover {
+          background-size: 100% 100%;
+          transition: all ease .5s;
+    
+          h3, p {
+            color: var(--#{$prefix}white);
+          }
+          
+          .includes {
+              color: var(--white);
+
+              svg {
+                  color: var(--white);
+              }
+          }
+          
+          .excludes {
+              color: var(--orange);
+          }
+      }
+
+      p {
+          color: $primary;
+      }
+
+      li {
+          font-size: 18px;
+          margin-bottom: 7px;
+      }
+
+      .includes {
+
+          color: var(--dark3);
+
+          svg {
+              color: $success;
+              width: 16px;
+              margin-right: 8px;
+          }
+      }
+
+      .excludes {
+
+          color: var(--dark4);
+
+          svg {
+              width: 16px;
+              margin-right: 8px;
+          }
+      }
+
+      .btn-outline {
+          border: 1px solid $primary;
+          color: $primary;
+          background: $white;
+      }
+  }
+}
+
+
+// about-footer
+.about-footer {
+  .about {
+      .swiper-container{
+          position:relative;
+      }
+        .swiper{
+          position:static;
+      }
+
+      .slide-1 {
+          background-image: url('/img/about/about-bg.png');
+          background-repeat: no-repeat;
+          height: 100%;
+          width: 100%;
+          background-position: center;
+          background-size: cover;
+      }
+
+      .swiper-button-next, .swiper-button-prev {
+          background: #fff;
+          height: 60px;
+          border-radius: 50%;
+          width: 60px;
+          color: #6B6B6B;
+          box-shadow: 0 1rem 3rem rgba($black, .175);
+
+          &::after {
+              font-size: 32px;
+          }
+      }
+  }
+
+  .swiper-pagination-bullet-active {
+      background: $primary;
+  }
+}
+
+
+.footer {
+  background-color: var(--dark5);
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+
+  li {
+      margin-bottom: 10px;
+      a {
+          color: var(--white);
+          transition: all .25s ease-in-out;
+
+          &:hover {
+              color: $primary;
+          }
+      }
+  }
+}
+
+
+
+
+// media
+@media screen and (min-width: 1400px) {
+  .swiper-button-next {
+      right: -48px !important;
+  }
+
+  .swiper-button-prev {
+      left: -64px !important;
+  }
+}
+
+
+@media screen and (max-width: 1400px) {
+    .swiper-button-next {
+      top: -38px !important;
+  }
+
+  .swiper-button-prev {
+      top: -38px !important;
+      left: auto !important;
+      right: 90px !important;
+  }
+
+}
+
+@media screen and (min-width: 1200px){
+  .nav-links {
+      padding-left: 16px;
+      padding-right: 16px;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .nav-item {
+      padding: 8px 16px;
+  }
+}

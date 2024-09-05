@@ -1,0 +1,52 @@
+{
+    "nav": {
+      "home": "Home",
+      "about": "About Us",
+      "contact": "Contact"
+    },
+    "home": {
+      "welcome": "Welcome to our website"
+    },
+    "about": {
+      "description": "We are a tech company"
+    },
+    "services": {
+        "service1": {
+          "title": "Web Development",
+          "description": "We create responsive and high-performance websites."
+        },
+        "service2": {
+          "title": "Mobile App Development",
+          "description": "Build scalable and robust mobile applications."
+        },
+        "service3": {
+          "title": "UI/UX Design",
+          "description": "Design user-friendly and engaging interfaces."
+        },
+        "service4": {
+          "title": "SEO Optimization",
+          "description": "Improve your website's search engine ranking."
+        },
+        "service5": {
+          "title": "Cloud Solutions",
+          "description": "Migrate and manage your infrastructure on the cloud."
+        },
+        "service6": {
+          "title": "E-commerce Development",
+          "description": "Build feature-rich and secure e-commerce platforms."
+        },
+        "service7": {
+          "title": "Cybersecurity",
+          "description": "Ensure the security of your digital assets."
+        },
+        "service8": {
+          "title": "Data Analytics",
+          "description": "Turn data into actionable insights."
+        },
+        "service9": {
+          "title": "Digital Marketing",
+          "description": "Increase your online presence through targeted campaigns."
+        }
+      }
+  }
+  
