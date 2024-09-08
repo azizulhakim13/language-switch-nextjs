@@ -7,19 +7,11 @@ export default function Document() {
         {/* Canonical tag for default homepage */}
         <link rel="canonical" href="http://localhost:3000/" />
 
-        {/* Hreflang tags with proper typing for React */}
-        <link
-          rel="alternate"
-          href="http://localhost:3000/"
-          hrefLang="bn-BD" // Note: Use "hrefLang" instead of "hreflang" to align with JSX/TSX standards
-        />
-        <link
-          rel="alternate"
-          href="http://localhost:3000/en"
-          hrefLang="en-US" // Proper casing for JSX/TSX
-        />
+        {/* Use hrefLang instead of hreflang */}
+        <link rel="alternate" href="http://localhost:3000/" hrefLang="bn" /> {/* Bengali */}
+        <link rel="alternate" href="http://localhost:3000/en" hrefLang="en" /> {/* English */}
 
-        {/* Add more hreflang tags for future languages if necessary */}
+        {/* Add more hreflang tags if you expand to more languages */}
       </Head>
       <body>
         <Main />

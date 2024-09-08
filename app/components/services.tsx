@@ -1,17 +1,27 @@
 import React from 'react';
 
-interface ServicesProps {
-  lang: string;
+interface ServiceProps {
+  lang: string; // This prop determines which language to display
 }
 
-export default function Services({ lang }: ServicesProps) {
+export default function Service({ lang }: ServiceProps) {
   return (
-    <section className="services">
+    <section>
       <h2>{lang === 'bn' ? 'আমাদের পরিষেবা' : 'Our Services'}</h2>
       <ul>
-        <li>{lang === 'bn' ? 'পরিষেবা ১' : 'Service 1'}</li>
-        <li>{lang === 'bn' ? 'পরিষেবা ২' : 'Service 2'}</li>
-        <li>{lang === 'bn' ? 'পরিষেবা ৩' : 'Service 3'}</li>
+        {lang === 'bn' ? (
+          <>
+            <li>পরিষেবা ১: বিবরণ</li>
+            <li>পরিষেবা ২: বিবরণ</li>
+            <li>পরিষেবা ৩: বিবরণ</li>
+          </>
+        ) : (
+          <>
+            <li>Service 1: Description</li>
+            <li>Service 2: Description</li>
+            <li>Service 3: Description</li>
+          </>
+        )}
       </ul>
     </section>
   );
