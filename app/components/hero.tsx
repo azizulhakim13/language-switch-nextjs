@@ -1,20 +1,23 @@
 import React from 'react';
 
 interface HeroProps {
-  lang: string; // Add the lang prop to accept the language
+  lang: string; // Accepts 'bn' for Bengali or 'en' for English
 }
 
 export default function Hero({ lang }: HeroProps) {
-  const isBengali = lang === 'bn';
-
   return (
     <section className="hero">
-      <h1>{isBengali ? 'আমাদের ওয়েবসাইটে স্বাগতম' : 'Welcome to Our Website'}</h1>
-      <p>
-        {isBengali
-          ? 'আপনার জন্য সেরা পরিষেবা এবং পণ্যগুলির প্রবেশদ্বার।'
-          : 'Your gateway to the best services and products.'}
-      </p>
+      {lang === 'bn' ? (
+        <>
+          <h1>আমাদের ওয়েবসাইটে স্বাগতম</h1>
+          <p>বাংলায় সেরা পরিষেবা এবং পণ্যগুলি অন্বেষণ করুন।</p>
+        </>
+      ) : (
+        <>
+          <h1>Welcome to Our Website</h1>
+          <p>Explore the best services and products in English.</p>
+        </>
+      )}
     </section>
   );
 }

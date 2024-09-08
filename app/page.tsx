@@ -1,10 +1,15 @@
-import Link from 'next/link';
+import Hero from './components/hero';
+import About from './components/about';
+import Services from './components/services';
 
-export default function HomePage() {
+export default function Home() {
+  const lang = 'bn'; // This will always be Bengali since it's the default page
+
   return (
     <div>
-      <h1>Welcome to the English Homepage</h1>
-      <Link href="/about">About Us</Link>
+      <Hero lang={lang} />
+      <About lang={lang} />
+      <Services lang={lang} />
     </div>
   );
 }

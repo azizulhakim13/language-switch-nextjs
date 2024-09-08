@@ -1,29 +1,23 @@
 import React from 'react';
-import Link from 'next/link';
 
 interface NavProps {
   language: string;
-  handleLanguageChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  onLanguageChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-export default function Nav({ language, handleLanguageChange }: NavProps) {
+export default function Nav({ language, onLanguageChange }: NavProps) {
   return (
-    <div className="nav">
-      <div className="container">
-        <ul className="list-unstyled">
-          {/* Dynamically update the links based on the current language */}
-          <li><Link href={`/${language}`}>Home</Link></li>
-          <li><Link href={`/${language}/about`}>About</Link></li>
-          <li><Link href={`/${language}/services`}>Services</Link></li>
-          <li><Link href={`/${language}/contact`}>Contact</Link></li>
-        </ul>
+    <nav>
+      <ul>
+        <li><a href={language === 'bn' ? '/' : '/en'}>Home</a></li>
+        {/* Add other navigational links here, like About, Services, etc. */}
+      </ul>
 
-        {/* Language Selector */}
-        <select onChange={handleLanguageChange} value={language}>
-          <option value="en">English</option>
-          <option value="bn">বাংলা</option>
-        </select>
-      </div>
-    </div>
+      {/* Language Selector Dropdown */}
+      <select onChange={onLanguageChange} value={language}>
+        <option value="bn">বাংলা</option>
+        <option value="en">English</option>
+      </select>
+    </nav>
   );
 }
